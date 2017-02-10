@@ -1,0 +1,12 @@
+commit c6575dd0bd026948e8ff51636ef73063db56720c
+Author: KostyaTrush <kostyatrush98@mail.ru>
+Date:   Fri Feb 10 12:06:37 2017 +0300
+
+    add status.txt
+
+commit 10f288ae5e4461ecebf3f91da83b0468e62afff6
+Author: KostyaTrush <kostyatrush98@mail.ru>
+Date:   Fri Feb 10 12:04:33 2017 +0300
+
+    add .gitignore
+
