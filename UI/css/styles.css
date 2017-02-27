@@ -1,0 +1,196 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    min-height: 100%;
+    background-image: url("../2.jpg");
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: azure;
+    overflow: hidden;
+    height: 4em;
+}
+
+header h1 {
+    float: left;
+    margin: 0.7rem;
+    margin-left: 15%;
+}
+
+.out{
+    margin: 1.4em;
+    margin-left: -1%;
+}
+
+header .search_form {
+    float: left;
+    margin: 1rem;
+    margin-left: 2rem;
+    font-size: 16px;
+}
+
+header .search_form input {
+    background: #828282;
+    color: #FFF;
+    border: 0;
+    border-radius: 5px;
+    width: 30em;
+    height: 1.6em;
+    outline: none;
+    padding-left: 1em;
+}
+
+header .search_form button {
+    background: transparent;
+    color: #FFF;
+    border: 0;
+    outline: none;
+    font-size: 1.05em;
+    cursor: pointer;
+}
+
+header h4 {
+    float: left;
+    margin: 1.2rem;
+}
+
+header a {
+    float: left;
+    margin: 1.1rem;
+}
+
+header span{
+    float: left;
+    margin: 1.1em;
+}
+
+main {
+    max-width: 80em;
+    margin: auto;
+    margin-top: 6em;
+}
+
+section {
+    float: left;
+}
+
+.image{
+    width: 35%;
+}
+
+.text{
+    width: 65%;
+}
+
+main article {
+    background: lightgrey;
+    margin: 2em;
+    height: 20em;
+    overflow: hidden;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thick;
+    border-color: black ;
+}
+
+main article a{
+    color: darkblue;
+}
+
+.image_article{
+    margin: 2em;
+}
+
+.article_text a{
+
+}
+
+.article_text{
+    height: 12.3em;
+    overflow: hidden;
+}
+
+.tags{
+    margin-top: 2em;
+}
+
+.add{
+    position: fixed;
+    margin: 7em;
+    margin-top: 3em;
+}
+
+.articles_list {
+    width: 70%;
+}
+
+.paginator{
+    margin-left: 35%;
+}
+
+.paginator, .paginator a, .paginator span{
+    color: black;
+}
+
+.navigation_block {
+    width: 30%;
+}
+
+article h3{
+    text-align: center;
+}
+
+article .filter_form input{
+    margin: 1em;
+}
+
+.filter_form .submit{
+    margin-left: 10em;
+}
+
+.clearfix {
+    clear: both;
+    margin-bottom: 6em;
+}
+
+footer {
+    padding: 0.3em;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 0.6em);
+    background: black;
+    color: azure;
+    display: inline-block;
+    position: absolute;
+}
+
+footer div{
+    float: left;
+}
+
+footer .news_name{
+    margin-left: 16%;
+    margin-top: 1em;
+}
+
+footer .author{
+    margin-left: 20%;
+    margin-top: 0.4em;
+}
+
+footer .last_changes{
+    margin-left: 13%;
+    margin-top: 1em;
+}
