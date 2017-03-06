@@ -52,6 +52,8 @@ main{
 }
 
 main .tags_form{
+    width: 100%;
+    display: inline-block;
     height: 40px;
     background: black;
     font-size: 26px;
@@ -100,6 +102,7 @@ main article{
     max-width: 80%;
     margin: 10%;
     margin-top: 20px;
+    background: azure;
 }
 
 main section{
@@ -126,9 +129,13 @@ main article div .authorName{
     margin-left: 65%;
 }
 
-main article .tags, main article .dataCreated{
+main article .tags{
     float: left;
     margin-left: 2%;
+}
+
+main article div .delete{
+    margin-left: 20%;
 }
 
 main a{
@@ -198,6 +205,7 @@ footer .lastChanges .time{
     -webkit-animation:fade ease-in 0.5s;
     -moz-animation:fade ease-in 0.5s;
     animation:fade ease-in 0.5s;
+    border-radius: 20px;
 }
 /* анимация при появлении скрытых блоков */
 @-moz-keyframes fade {
