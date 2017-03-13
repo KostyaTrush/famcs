@@ -3,12 +3,11 @@
 <head>
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/addNews.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        showMessage(0, 2, {tags: ["Экономика"], dataBefore: new Date('2017-04-04'), dataAfter: new Date('2016')});
-        showMessage2(2);
-        print();
+
     </script>
 </head>
 <body>
@@ -16,7 +15,7 @@
         <h1>
             KLNEWS
         </h1>
-        <h3><a href="#">Выйти</a></h3>
+        <h3><a class="user" onclick="login();">Войти</a></h3>
         <a href="#"><img src="NcV_EEYVL8A.png" height="30" width="30"></a>
     </header>
 
@@ -54,7 +53,7 @@
                 </div>
                 <br><br>
                 <input type="checkbox" class="hide" id="hd-2">
-                <label for="hd-2">Добавить новость</label>
+                <label class="addNews" for="hd-2">Добавить новость</label>
                 <div class="add">
                     <input type="text" placeholder="Название статьи">
                     <input type="text" placeholder="путь к фото">
@@ -69,172 +68,9 @@
                 <button class="search_button" id="search_button">Найти</button>
             </form>
         </div>
-        <section class="firstCol">
-            <article>
-                <h2><a href="#">ANDREW REYNOLDS VS STREET</a></h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="1.png" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Спорт</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="index1.html">Удалить новость</a></span>
-                </div>
-            </article>
-            <article>
-                <h2>
-                    <a href="#">ANDREW REYNOLDS VS STREET</a>
-                </h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="1.png" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Спорт</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="#">Удалить новость</a></span>
-                </div>
-            </article>
-            <article>
-                <h2><a href="#">ANDREW REYNOLDS VS STREET</a></h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="1.png" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Спорт</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="#">Удалить новость</a></span>
-                </div>
-            </article>
-            <article>
-                <h2><a href="#">DONALD TRUMP PUMP PUMP</a></h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="2.jpg" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Политика</a>, <a href="#">Экономика</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="#">Удалить новость</a></span>
-                </div>
-            </article>
-            <article>
-                <h2><a href="#">DONALD TRUMP PUMP PUMP</a></h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="2.jpg" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Политика</a>, <a href="#">Экономика</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="#">Удалить новость</a></span>
-                </div>
-            </article>
-        </section>
-        <section class="secondCol">
-            <article>
-                <h2><a href="#">DONALD TRUMP PUMP PUMP</a></h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="2.jpg" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Политика</a>, <a href="#">Экономика</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="#">Удалить новость</a></span>
-                </div>
-            </article>
-            <article>
-                <h2><a href="#">ANDREW REYNOLDS VS STREET</a></h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="1.png" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Спорт</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="#">Удалить новость</a></span>
-                </div>
-            </article>
-            <article>
-                <h2><a href="#">DONALD TRUMP PUMP PUMP</a></h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="2.jpg" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Политика</a>, <a href="#">Экономика</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="#">Удалить новость</a></span>
-                </div>
-            </article>
-            <article>
-                <h2><a href="#">DONALD TRUMP PUMP PUMP</a></h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="2.jpg" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Политика</a>, <a href="#">Экономика</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="#">Удалить новость</a></span>
-                </div>
-            </article>
-            <article>
-                <h2><a href="#">ANDREW REYNOLDS VS STREET</a></h2>
-                <div class="imageArticle">
-                    <a href="#"><img src="1.png" alt=":(" height="300" width="500"></a>
-                </div>
-                <div class="author">
-                    Автор: <span class="authorName">Костя Труш</span>
-                </div>
-                <div class="tags">
-                    Теги: <a href="#">Спорт</a>, <a href="#">Баня</a>
-                </div>
-                <br>
-                <div class="dataCreated">
-                    Дата добавления: 28.02.2017 <span class="delete" ><a href="#">Удалить новость</a></span>
-                </div>
-            </article>
-        </section>
+        <div class="news">
+
+        </div>
         <div class="paginator"><span class="inactiveLink">1</span> <a href="#">2</a> <a href="">3</a> <a href="#">4</a> <a href="#">5</a> &hellip; <a href="#">11</a> | <a href="index1.html">Next &gt;</a></div>
     </main>
 
@@ -255,5 +91,26 @@
             </section>
         </div>
     </footer>
+
+    <template id="template-article-list-item">
+        <div  class="article-list-item" data-id="id">
+        <h3><a class="article-list-item-title" href="#">ANDREW REYNOLDS VS STREET</a></h3>
+        <a href="#">
+            <div class="article-list-item-img">
+            </div>
+        </a>
+            <div class="authorName">
+            Автор: <span class="article-list-item-author">Костя Труш</span>
+        </div>
+            <br>
+        <div class="tags">
+            Теги: <a class="firstTag" href="#">Спорт</a>, <a class="secondTag" href="#">Баня</a>, <a class="thirdTag" href="#">Баня</a>, <a class="fourthTag" href="#">Баня</a>, <a class="fivthTag" href="#">Баня</a>
+        </div>
+            <br>
+        <div class="dataCreated">
+            Дата добавления: <span class="article-list-item-date"> 28.02.2017 08:09</span>
+        </div>
+        </div>
+    </template>
 </body>
 </html>

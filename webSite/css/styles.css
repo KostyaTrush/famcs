@@ -98,44 +98,37 @@ main .search_form button{
     margin-top: 38px;
 }
 
-main article{
-    max-width: 80%;
-    margin: 10%;
+main .article-list-item{
+    display: inline-block;
+    max-width: 100%;
+    margin: 5px;
     margin-top: 20px;
     background: azure;
 }
 
-main section{
-    float: left;
-}
-
-main .firstCol{
-    width: 50%;
-}
-
-main .secondCol {
-    width: 50%;
-}
-
-main article h2 a{
+main .article-list-item h3 a{
     color: black;
 }
 
-main article .tags a{
+main .article-list-item .tags a{
     color: cornflowerblue;
 }
 
-main article div .authorName{
-    margin-left: 65%;
-}
-
-main article .tags{
+main .article-list-item .authorName{
     float: left;
-    margin-left: 2%;
 }
 
-main article div .delete{
-    margin-left: 20%;
+main .article-list-item .tags{
+    float: left;
+}
+
+main .dataCreated{
+    float: left;
+}
+
+main .article-list-item-delete{
+    float: left;
+    visibility: hidden;
 }
 
 main a{
@@ -166,6 +159,14 @@ footer .lastChanges{
 
 footer .lastChanges .time{
     margin-left: 76%;
+}
+
+.user {
+    cursor: pointer;
+}
+
+.addNews{
+    visibility: hidden;
 }
 
 /* demo контейнер */
