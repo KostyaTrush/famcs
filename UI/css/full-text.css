@@ -1,0 +1,38 @@
+.full-news{
+    display: none;
+    transition: margin 400ms cubic-bezier(0.17,0.04,0.03,0.94);
+}
+
+.title-level a{
+    cursor: pointer;
+    float: right;
+    margin: 8px;
+    visibility: visible;
+}
+
+.title-level{
+    text-align: center;
+}
+
+.f-news{
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.title{
+    display: inline;
+}
+
+.fimage{
+    margin-left: 170px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.ftags, .fdate, .fauthor, .content, .title-level{
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}

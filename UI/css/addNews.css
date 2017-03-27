@@ -1,0 +1,30 @@
+.add_news{
+    display: none;
+    transition: margin 400ms cubic-bezier(0.17,0.04,0.03,0.94);
+}
+
+.add-form{
+    text-align: center;
+    margin-top: 150px;
+    display: block;
+}
+
+.add-title{
+    height: 30px;
+    width: 400px;
+}
+
+.add-tags{
+    height: 30px;
+    width: 250px;
+}
+
+.file{
+    margin-left: 320px;
+}
+
+.add-post{
+    cursor: pointer;
+    margin-left: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}

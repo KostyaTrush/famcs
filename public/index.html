@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exadel</title>
+    <link rel="stylesheet" href="css/imageHover.css" /> </head>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/left-slide.css" rel="stylesheet">
+    <link href="css/full-text.css" rel="stylesheet">
+    <link href="css/addNews.css" rel="stylesheet">
+    <link href="css/filter.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300&subset=latin,cyrillic' rel='stylesheet'>
+<body>
+    <input class="open" id="top-box" type="checkbox" hidden>
+    <label class="btn" for="top-box"></label>
+    <div class="top-panel">
+        <div class="message">
+            <h1>
+                <span class="name-news"><a class="mp" onclick="openMainPage()">EXADEL-NEWS PORTAL</a></span>
+                <span class="login-button"><a class="user" onclick="openAuthorization()">Войти</a></span>
+            </h1>
+            <br><br>
+            <form class="search_form">
+                <input type="text" class="search_words" placeholder="Поиск">
+                <button type="button" class="search_button" onclick="searchArticles()">Найти</button>
+            </form>
+            <br>
+            <span class="out"><a onclick="openAuthorization()">Выйти</a></span>
+        </div>
+    </div>
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!--
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+    <!--
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+    <!--
+    Здесь размещаете любую разметку,
+    если это меню, то скорее всего неупорядоченный список <ul>
+    -->
+        <h2 class="logo">
+            <a>Exadel-news portal</a>
+        </h2>
+        <ul>
+            <li><a onclick="searchPolitictag()">Политика</a>
+            <li><a onclick="searchEconomictag()">Экономика</a>
+            <li><a onclick="searchSporttag()">Спорт</a>
+            <li><a onclick="searchMusictag()">Музыка</a>
+            <li><a onclick="searchEnvironmenttag()">Развления</a>
+            <li class="number">+375295238413</li>
+            <!--<li><a href="#7">Семь</a>-->
+        </ul>
+    </nav>
+    <div class="main-page">
+        <main>
+            <div class="crease">
+                <button class="decrease" onclick="decrease()">уменьшить</button>
+                <button class="increase" onclick="increase()">увеличить</button>
+            </div>
+            <!--<a onclick="">уменьшить</a>-->
+            <article class="news">
+            </article>
+            <div class="buttons">
+                <button class="add-news" onclick="add()">Добавить новость</button>
+                <!--<button class="filter-button">Фильтр</button>-->
+                <br><br>
+                <div class="filter-block">
+                    <input type="text" class="filter-author" placeholder="Автор">
+                    <input type="text" class="filter-tags" placeholder="Теги через запятую">
+                    <input type="text" class="filter-data1" placeholder="Дата с">
+                    <input type="text" class="filter-data2" placeholder="Дата до">
+                    <br>
+                    <button class="filter-button" onclick="filterArticles()">Фильтр</button>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </main>
+        <footer>
+            <div class="paginator">
+                <button class="button-pag" onclick="showMore()">
+                    Еще...
+                </button>
+            </div>
+            <div class="footerInfo">
+                <section class="bossInfo">
+                    <ul>
+                        <li>
+                            Костя Труш, 5 группа
+                        </li>
+                        <li>
+                            kostyatrush98@mail.ru
+                        </li>
+                    </ul>
+                </section>
+                <section class="lastChanges">
+                    <span class="lch">Последнее изменение:<br> <span class="time">18:52</span></span>
+                </section>
+            </div>
+        </footer>
+        <template id="template-article-list-item">
+            <div class="wrapper" data-id="id">
+                <div class="box-thumb">
+                    <img class="image" src="2.jpg" width="360" onclick="findNews(this.parentNode.parentNode)">
+                    <p class="descript"></p>
+                </div>
+                <div class="authorName">
+                    Автор: <span class="article-list-item-author">Костя Труш</span>
+                </div>
+                <div class="tags">
+                    Теги: <a class="tag" href="#">Спорт</a>
+                </div>
+                <div class="dataCreated">
+                    Дата добавления: <span class="article-list-item-date"> 28.02.2017 08:09</span>
+                </div>
+            </div>
+        </template>
+    </div>
+    <div class="authorization">
+        <input type="text" class="login" placeholder="Введите имя пользователя">
+        <br>
+        <input type="password" class="psswrd" placeholder="Введите пароль">
+        <br>
+        <input type="button" class="button-click" value="Войти" onclick="login()">
+    </div>
+    <div class="full-news">
+        <div class="f-news">
+            <div class="title-level">
+                <h1 class="title">
+                    ANDREW REYNOLDS VS STREET
+                </h1>
+                <a class="del"><img src="del.png" width="20" height="20" onclick="deletePost()"></a>
+                <a class="edit"><img src="edit.png" width="20" height="20" onclick="edit()"></a>
+            </div>
+            <div class="twolevel">
+                <img class="fimage" src="1.png" >
+                <!--<div class="but-two-level">-->
+                    <!--<button class="edit">Редактировать</button>-->
+                    <!--<button class="delete">Удалить</button>-->
+                <!--</div>-->
+            </div>
+            <p class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus</p>
+            <br>
+            <div class="fauthor">
+                Автор: <span class="ath">Костя Труш</span>
+            </div>
+            <div class="ftags">
+                Теги: <a class="ftag" href="#">Спорт</a>
+            </div>
+            <div class="fdate">
+                Дата добавления: <span class="dat"> 28.02.2017 08:09</span>
+            </div>
+        </div>
+        <footer>
+            <div class="footerInfo">
+                <section class="bossInfo">
+                    <ul>
+                        <li>
+                            Костя Труш, 5 группа
+                        </li>
+                        <li>
+                            kostyatrush98@mail.ru
+                        </li>
+                    </ul>
+                </section>
+                <section class="lastChanges">
+                    <span class="lch">Последнее изменение:<br> <span class="time">18:52</span></span>
+                </section>
+            </div>
+        </footer>
+    </div>
+    <div class="add_news">
+        <form class="add-form">
+            <input class="add-title" type="text" placeholder="Заголовок">
+            <input class="add-tags" type="text" placeholder="Теги">
+            <br>
+            <textarea class="add-content" placeholder="Контент" rows="20" cols="92"></textarea>
+            <br>
+        </form>
+        <input type="file" class="file">
+        <button class="add-post" onclick="addPost()">Опубликовать новость</button>
+    </div>
+    <div class="error-page">
+        <h1>
+            ИЗВИНИТЕ, НО МАТЕРИАЛА ПО ВАШЕМУ ЗАПРОСУ НЕ НАЙДЕНО.<br>ПОДКОРРЕКТИРУЙТЕ ПОИСК.
+        </h1>
+    </div>
+    <div class="mask-content"></div>
+    <script type="text/javascript" src="js/filter.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/deleteNedit.js"></script>
+    <script type="text/javascript" src="js/crease.js"></script>
+    <script type="text/javascript" src="js/add.js"></script>
+    <script type="text/javascript" src="js/full.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+
+</html>

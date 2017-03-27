@@ -1,0 +1,21 @@
+.search{
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.filter-author, .filter-tags, .filter-data1, .filter-data2{
+    width: 300px;
+    height: 35px;
+}
+
+.filter-button{
+    float: right;
+}
+
+.filter-block{
+    margin-left: 25px;
+    width: 71%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 1);
+}
