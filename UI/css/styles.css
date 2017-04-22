@@ -1,196 +1,300 @@
-html {
-    height: 100%;
-    box-sizing: border-box;
+@charset  "UTF-8";
+/*
+* Выдвигающаяся верхняя панель
+* исключительно средствами CSS
+* работает на скрытых чекбоксах(checkbox)
+*
+* автор: @dobrovoi dbmast.ru
+*/
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
 }
 
 body {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    min-height: 100%;
-    background-image: url("../2.jpg");
+    background: #d0d0d0;
+    background: -webkit-linear-gradient(90deg,#abbaab 10%,#fff 90%);
+    background: -moz-linear-gradient(90deg,#abbaab 10%,#fff 90%);
+    background: -ms-linear-gradient(90deg,#abbaab 10%,#fff 90%);
+    background: -o-linear-gradient(90deg,#abbaab 10%,#fff 90%);
+    background: linear-gradient(90deg,#abbaab 10%,#fff 90%);
+    font-size: 100%;
+    display: block;
 }
 
-header {
-    position: fixed;
-    top: 0;
+h1 {
+    font-weight: 300;
+    font-size: 175%;
+    color: #191919;
+    -webkit-font-smoothing: antialiased
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 130%;
+    color: #888;
+    padding: 5px 0
+}
+
+.login-button{
+    margin-left: 330px;
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        font-size: 90%
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        font-size: 100%
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    body {
+        font-size: 120%
+    }
+}
+/*  ===== Выдвигающаяся верхняя панель
+*   =========================================
+*   Базовый контейнер выдвижной панели */
+.top-panel {
+    background: #39464e;
+    position: absolute;
+    top: -250px;
     left: 0;
     width: 100%;
-    background-color: black;
-    color: azure;
-    overflow: hidden;
-    height: 4em;
+    height: 250px;
+    padding: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    transition: top 400ms cubic-bezier(0.17,0.04,0.03,0.94)
+}
+/* Блок сообщения */
+.message {
+    color: #fff;
+    font-weight: 300;
+    position: relative;
+    padding: 3em 2em;
+    margin: 0 auto;
+    max-width: 980px
+}
+/* Заголовок 1 уровня */
+.message h1 {
+    color: #fff
 }
 
-header h1 {
+/* Переключатель панели */
+label.btn {
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 0;
+    cursor: pointer;
+    background: #2bbbad;
+    width: 50px;
+    border-radius: 0 0 5px 5px;
+    padding: 8px 5px;
+    color: #FFF;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    transition: all 400ms cubic-bezier(0.17,0.04,0.03,0.94);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    z-index: 9999
+}
+/* Переключатель при наведении */
+label.btn:hover {
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15)
+}
+/* Стрелка переключателя вниз */
+label.btn:after {
+    content: '\f078';
+    font: normal 18px/1 FontAwesome;
+    text-decoration: inherit
+}
+/* Активация панели */
+.open:checked ~ .top-panel {
+    top: 0
+}
+
+.open:checked ~ label.btn {
+    top: 250px
+}
+/* Смещение контейнера контента страницы */
+.open:checked ~ .main-page,.open:checked ~ .full-news{
+    margin-top: 250px;
+}
+
+.open:checked ~ .add_news{
+    margin-top: 280px;
+}
+/* Цвет переключателя при клике */
+.open:checked + label.btn {
+    background: #dd6149
+}
+/* Стрелка переключателя вверх*/
+.open:checked + label.btn:after {
+    content: '\f077';
+    font: normal 18px/1 FontAwesome
+}
+/* Контейнер контента */
+.main-page{
+    width:100%;
+    transition: margin 400ms cubic-bezier(0.17,0.04,0.03,0.94);
+}
+
+main .news {
     float: left;
-    margin: 0.7rem;
-    margin-left: 15%;
+    max-width: 850px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 1em;
+}
+
+main{
+    width: 1280px;
+    display: inline-block;
+}
+
+.wrapper{
+    width: 28vmax;
+    height: 24vmax;
+    float: left;
+    margin: 20px;
+    padding: 0.5em;
+    font: 300 1rem/140% 'Exo 2', Tahoma, Verdana, Segoe, sans-serif;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.6); /* Цвет фона */
+}
+
+.search_form input{
+    width: 300px;
+}
+
+.search_button{
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.user{
+    cursor: pointer;
+    visibility: visible;
+}
+/*.clearfix{*/
+    /*clear: both;*/
+/*}*/
+/*footer{*/
+    /*display: none;*/
+/*}*/
+.button-pag{
+    visibility: hidden;
+    cursor: pointer;
+    margin-left: 770px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+footer .footerInfo{
+    margin-top: 30px;
+    width: 100%;
+    height:50px;
+    background: #39464e;
+    color: azure;
+}
+
+footer section{
+    float: left;
+}
+
+footer .bossInfo{
+    width: 50%;
+    margin-left: 50px;
+}
+
+footer .lastChanges{
+    width: 20%;
+    margin-left: 330px;
+}
+
+footer .lastChanges .time{
+}
+
+.add-news{
+    cursor: pointer;
+    margin-top: 60px;
+    margin-left: 110px;
+    visibility: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.filter-button{
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.authorization{
+    display: none;
+    margin-top: 350px;
+    margin-left: 500px;
+}
+
+.login, .psswrd{
+    width: 300px;
+    height: 40px;
+}
+
+.buttons{
+    position: fixed;
+    margin-left: 870px;
 }
 
 .out{
-    margin: 1.4em;
-    margin-left: -1%;
-}
-
-header .search_form {
-    float: left;
-    margin: 1rem;
-    margin-left: 2rem;
-    font-size: 16px;
-}
-
-header .search_form input {
-    background: #828282;
-    color: #FFF;
-    border: 0;
-    border-radius: 5px;
-    width: 30em;
-    height: 1.6em;
-    outline: none;
-    padding-left: 1em;
-}
-
-header .search_form button {
-    background: transparent;
-    color: #FFF;
-    border: 0;
-    outline: none;
-    font-size: 1.05em;
+    visibility: hidden;
+    margin-left: 1000px;
     cursor: pointer;
 }
 
-header h4 {
-    float: left;
-    margin: 1.2rem;
+.logo{
+    cursor: pointer;
 }
 
-header a {
-    float: left;
-    margin: 1.1rem;
+.increase, .decrease{
+    cursor: pointer;
 }
 
-header span{
-    float: left;
-    margin: 1.1em;
+.crease{
+    margin-left: 370px;
 }
 
-main {
-    max-width: 80em;
-    margin: auto;
-    margin-top: 6em;
+.decrease{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    visibility: hidden;
 }
 
-section {
-    float: left;
+.increase{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    visibility: visible;
 }
 
-.image{
-    width: 35%;
+.mp{
+    cursor: pointer;
 }
 
-.text{
-    width: 65%;
+.button-click{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
 }
 
-main article {
-    background: lightgrey;
-    margin: 2em;
-    height: 20em;
-    overflow: hidden;
-    border-radius: 10px;
-    border-style: solid;
-    border-width: thick;
-    border-color: black ;
+.error-page{
+    display: none;
 }
 
-main article a{
-    color: darkblue;
-}
-
-.image_article{
-    margin: 2em;
-}
-
-.article_text a{
-
-}
-
-.article_text{
-    height: 12.3em;
-    overflow: hidden;
-}
-
-.tags{
-    margin-top: 2em;
-}
-
-.add{
-    position: fixed;
-    margin: 7em;
-    margin-top: 3em;
-}
-
-.articles_list {
-    width: 70%;
-}
-
-.paginator{
-    margin-left: 35%;
-}
-
-.paginator, .paginator a, .paginator span{
-    color: black;
-}
-
-.navigation_block {
-    width: 30%;
-}
-
-article h3{
-    text-align: center;
-}
-
-article .filter_form input{
-    margin: 1em;
-}
-
-.filter_form .submit{
-    margin-left: 10em;
-}
-
-.clearfix {
-    clear: both;
-    margin-bottom: 6em;
-}
-
-footer {
-    padding: 0.3em;
-    bottom: 0;
-    left: 0;
-    width: calc(100% - 0.6em);
-    background: black;
-    color: azure;
-    display: inline-block;
-    position: absolute;
-}
-
-footer div{
-    float: left;
-}
-
-footer .news_name{
-    margin-left: 16%;
-    margin-top: 1em;
-}
-
-footer .author{
-    margin-left: 20%;
-    margin-top: 0.4em;
-}
-
-footer .last_changes{
-    margin-left: 13%;
-    margin-top: 1em;
+.error-page h1{
+    margin-left: 300px;
+    margin-top: 400px;
 }
