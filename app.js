@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/', function(req, res){
-  res.send("LIZA IS MY BITCH");
+  res.send("LIZA");
 })
 
 app.get('/news', newsController.all);

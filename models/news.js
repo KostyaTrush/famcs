@@ -2,7 +2,7 @@ var db = require('../db');
 var ObjectID = require('mongodb').ObjectID;
 
 exports.all = function(cb){
-  db.get().collection('news').find().toArray(function(err, docs){
+  db.get().collection('news').find().sort({createdAt: -1}).toArray(function(err, docs){
     cb(err, docs);
   })
 }

@@ -3,10 +3,10 @@
  */
 
 function increase() {
-    var arr1 = document.querySelectorAll('.image');
-    var arr2 = document.querySelectorAll('.box-thumb p.descript');
-    var arr3 = document.querySelectorAll('.wrapper');
-    for(var i = 0; i < arr1.length; i++)
+    let arr1 = document.querySelectorAll('.image');
+    let arr2 = document.querySelectorAll('.box-thumb p.descript');
+    let arr3 = document.querySelectorAll('.wrapper');
+    for(let i = 0; i < arr1.length; i++)
     {
         arr1[i].setAttribute('width', '1000px');
         arr3[i].style.height = '100%';
@@ -19,10 +19,10 @@ function increase() {
 }
 
 function decrease() {
-    var arr1 = document.querySelectorAll('.image');
-    var arr2 = document.querySelectorAll('.box-thumb p.descript');
-    var arr3 = document.querySelectorAll('.wrapper');
-    for(var i = 0; i < arr1.length; i++)
+    let arr1 = document.querySelectorAll('.image');
+    let arr2 = document.querySelectorAll('.box-thumb p.descript');
+    let arr3 = document.querySelectorAll('.wrapper');
+    for(let i = 0; i < arr1.length; i++)
     {
         arr1[i].setAttribute('width', '360px');
         arr3[i].style.height = '24vmax';
